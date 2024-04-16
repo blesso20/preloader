@@ -1,0 +1,93 @@
+
+
+#body{
+    background-image: url(./images/backg.jpg);
+}
+
+
+
+
+.time{
+    color: rgb(218, 212, 212);
+     /* height: 90px;
+    width: 20%; */
+    font-size: 24px;
+    font-weight: 900px;
+   /* text-align: center; */
+    /* background-color: rgba(4, 4, 105, 0.958);
+    border: 2px solid rgb(218, 212, 212) ; */
+   padding-top: 10px;
+    /* border-radius: 7% ; */
+    margin-left: 1%;
+    /* margin-top: 1%; */
+    /* box-shadow: 2px 2px 2px 2px rgb(30, 30, 30) ; */
+    font-family: "Montserrat", sans-serif;
+    
+}
+.text{
+    width: 50%;
+    float: left;
+    height: 35em;
+    /* background-color: red; */
+    font-family: "Montserrat", sans-serif;
+    margin-top: 10px;
+}
+.text h1{
+    color: #fff;
+       padding-top: 2em;
+}
+.btn{
+    background-color: rgb(207, 203, 203);
+    margin: 40px 0 0 14em;
+    color:  rgba(25, 85, 237, 0.958);
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+}
+
+.todo{
+    height: 38em;
+    width: 38%;
+    background-color: rgb(207, 203, 203);
+    margin-left:  47rem;
+    margin-top: 6px;
+    box-shadow: 5px 5px 2px rgb(30, 30, 30) ;
+   
+    
+    
+}
+.todo h1{
+    text-align: center;
+    color: rgba(25, 85, 237, 0.958);
+    padding-top: 5px;
+}
+ .todo input{
+    width: 80%;
+    height: 50px;
+    font-size: 18px;
+    margin-left: 50px;
+    background-color: rgb(241, 237, 237);
+    box-shadow: 5px 5px 5px  rgb(120, 122, 122);
+
+}
+textarea{
+    margin-top: 24px;
+    margin-left: 50px;
+    background-color: rgb(241, 237, 237);
+    font-size: 18px;
+    outline: none;
+    border: none;
+    box-shadow: 5px 5px 5px  rgb(120, 122, 122);
+}
+
+.submit input{
+    background-color: rgba(25, 85, 237, 0.958);
+    color: #fff;
+    font-size: 20px;
+    margin-top: 10px;
+    outline: none;
+    border: none;
+}
+#preloader{
+    display: none;
+    margin: 25px 250px;
+}

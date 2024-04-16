@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+     <!-- bootstrap 5 link -->
+     <link
+
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+
+      rel="stylesheet"
+
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+
+      crossorigin="anonymous" />
+    <!-- css link -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body> 
+  <div class="app">
+
+    <div id="deviceready" class="blink">
+
+    <!-- todolist frame and form -->
+        <div class="todo">
+         <form id="theForm" enctype="multipart/form-data">
+            <h1>To-Do-List</h1>
+            <hr>
+            <div class="form_group">
+                <label for="name"></label>
+                <input type="text" name="name" id="name" placeholder=" Your Name" class="form-control" required>
+            </div>
+            <div class="form_group">
+                <label for="tittle"></label>
+                <input type="text" name="tittle" id="tittle" placeholder="Task Tittle" class="form-control" required>
+            </div>
+            <div class="form_group">
+                <label for="priority"></label>
+                <input  type="text" name="priority" id="prority" placeholder="Priority Level" class="form-control" required>
+                <!-- <select name="priority" id="priority">
+                    <option value="low">Low</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="High">High</option>
+                </select>
+                -->
+            </div>
+            <div class="form_group">
+                <label for="deadline"></label>
+                <input type="datetime-local" name="deadline" id="deadline" placeholder="Deadline" class="form-control" required>
+            </div>
+            <div class="form_group">
+                <label for="area">
+                <textarea name="task" id="area" cols="42" rows="4" placeholder="Create Task" required></textarea>
+            
+                </label>
+            </div>
+            <div class="submit">
+            <input type="submit" value="Submit" id="submit" class="submit">
+         </div>
+
+         <!-- setting a preloader -->
+         <div id="preloader">
+         <img src="https://icons8.com/preloaders/preloaders/1488/Iphone-spinner-2.gif" >
+         </div>
+         </form>
+        </div>
+    </div>
+
+<!-- jquery cdn link -->
+    <script
+
+      src="https://code.jquery.com/jquery-3.6.0.js"
+
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+
+      crossorigin="anonymous"
+
+    ></script>
+
+    <!-- ajax preloader functions -->
+    <script>
+    $(document).ready(function () {
+        $("#theForm").on("submit", function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "db.php",
+                data: new FormData(this),
+                beforeSend: function (){
+                    $("#preloader").show();
+                    $("#submit").hide();
+                },
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (result) { 
+                    alert(result);
+                },
+                complete: function (data){
+                    $("#preloader").hide();
+                    $("#submit").show();
+                },
+            });
+        });
+    });
+    </script>
+
+</body>
+</html>
